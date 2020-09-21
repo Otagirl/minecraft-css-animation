@@ -1,0 +1,895 @@
+body {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(#20FF97, #24C17C, #7B533A, #522D0C, rgb(54, 26, 2));
+    background-repeat: no-repeat;
+}
+
+/* progress bar */
+#progressbar {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    margin: auto;
+    display: flex;
+    height: 36px;
+    position: absolute;
+    width: 400px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+    padding: 2px;
+}
+
+#progressbar p {
+    color: #FFFF00;
+    font-family: Minecraft;
+    font-size: 1.3rem;
+    margin-top: -40px;
+    text-align: center;
+    width: 400px;
+    animation-name: load-color;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes load-color {
+    from {
+        color: #FFFF00;
+    }
+
+    25% {
+        color: orange;
+    }
+
+    50% {
+        color: #FFFF00;
+    }
+
+    75% {
+        color: orange;
+    }
+
+    to {
+        color: #FFFF00;
+    }
+}
+
+#loading {
+    transition: all 800ms ease;
+    height: 29px;
+    width: calc(100% - 10px);
+    border-radius: 2px;
+    background: #FFFF00;
+    position: absolute;
+    margin: 3px;
+    display: inline-block;
+    animation: load 5s ease forwards;
+}
+
+@keyframes load {
+    0% {
+        width: 2%;
+    }
+
+    50% {
+        width: 30%;
+    }
+}
+
+/**/
+/* PAGE1 */
+
+#section1 {
+    height: 100vh;
+}
+
+#section2.perso {
+    background: linear-gradient(#20FF97, #24C17C, #7B533A, #522D0C, rgb(54, 26, 2));
+
+}
+
+.minecraft_logo {
+    width: 100%;
+    text-align: center;
+}
+
+.minecraft_logo .logo {
+    margin-top: 6rem;
+    width: 50%;
+}
+
+#flashing-text {
+    animation-name: flashing-text;
+    animation-duration: unset;
+    margin: -6.5% 0 0 47%;
+    padding-left: 17%;
+    width: 40%;
+    transform: rotate(-20deg);
+    animation: flashing-text 0.5s ease-in-out;
+    animation-iteration-count: infinite;
+    color: #FFFF00;
+    font-size: 1.6vw;
+    font-family: Minecraft;
+}
+
+@keyframes flashing-text {
+    0% {
+        transform: scale(1) rotate(-20deg);
+    }
+
+    50% {
+        transform: scale(1.05) rotate(-20deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(-20deg);
+    }
+}
+
+#playsingle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 1.2rem;
+    margin: 10rem auto 0rem auto;
+    background: #7D7D7D;
+    background-size: 100% 300%;
+    color: #E0E0E0;
+    font-size: 1.5vw;
+    font-family: Minecraft;
+    outline: 0.2vw solid #000;
+    outline-offset: -0.2vw;
+}
+
+#playmulti {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 1.1rem;
+    margin: 0rem auto 1rem auto;
+    background: #7D7D7D;
+    background-size: 100% 300%;
+    color: #E0E0E0;
+    font-size: 1.5vw;
+    font-family: Minecraft;
+    outline: 0.2vw solid #000;
+    outline-offset: -0.2vw;
+}
+
+#playsingle:hover {
+    background: #7079AA;
+    background-size: 100% 300%;
+    color: #FFFFA0;
+}
+
+#playmulti:hover {
+    background: #7079AA;
+    background-size: 100% 300%;
+    color: #FFFFA0;
+}
+
+#error-message {
+    font-family: Minecraft;
+    text-align: center;
+    color: #FFFF00;
+}
+
+#error-message p {
+    margin: auto;
+}
+
+.hide {
+    display: none !important;
+}
+
+.credits p {
+    font-family: Minecraft;
+    color: white;
+    text-align: center;
+    font-size: 1.1vw;
+}
+
+/*PAGE 2*/
+#section2 {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.skin p {
+    font-family: Minecraft;
+    padding-left: 1.3rem;
+    padding-top: 0.5rem;
+    font-size: 0.8rem;
+}
+
+#section2>div:not(#progressbar) {
+    display: none;
+}
+
+#section2.active {
+    display: block;
+}
+
+#section2 h1 {
+    font-family: Minecraft;
+    font-size: 2vw;
+    color: #FFFF00;
+    text-align: center;
+    padding-top: 3.5rem;
+}
+
+#section2 h2 {
+    font-family: Minecraft;
+    font-size: 1vw;
+    color: #FFFF00;
+    text-align: center;
+    padding-top: 0.5rem;
+    animation-name: h2;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate
+}
+
+@keyframes h2 {
+    from {
+        color: red;
+    }
+
+    15% {
+        color: orange;
+    }
+
+    25% {
+        color: yellow;
+    }
+
+    50% {
+        color: greenyellow;
+    }
+
+    75% {
+        color: rgb(44, 213, 255);
+    }
+
+    to {
+        color: rgb(197, 52, 255);
+    }
+}
+
+/* SKIN */
+
+.skin {
+    height: 400px;
+}
+
+.skin-container {
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    perspective: 800px;
+    position: relative;
+}
+
+.body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    animation: 3.8s linear infinite body;
+    transform: rotateY(0deg);
+    will-change: transform;
+    cursor: pointer;
+}
+
+@keyframes body {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.body .node,
+.body .block {
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.body .node .face {
+    position: absolute;
+    background: url("img/test4.png");
+}
+
+.body:hover .node .face {
+    background-image: url("img/venom.png");
+}
+
+/* Chest */
+
+.body .chest .front {
+    width: 64px;
+    height: 96px;
+    left: -32px;
+    top: -48px;
+    transform: translateZ(16px);
+    background-position: -160px -160px;
+}
+
+.body .chest .back {
+    width: 64px;
+    height: 96px;
+    left: -32px;
+    top: -48px;
+    transform: rotateY(180deg) translateZ(16px);
+    background-position: -256px -160px;
+}
+
+.body .chest .left {
+    width: 32px;
+    height: 96px;
+    left: -16px;
+    top: -48px;
+    transform: rotateY(90deg) translateZ(32px);
+    background-position: -224px -160px;
+}
+
+.body .chest .right {
+    width: 32px;
+    height: 96px;
+    left: -16px;
+    top: -48px;
+    transform: rotateY(270deg) translateZ(32px);
+    background-position: -128px -160px;
+}
+
+.body .chest .top {
+    width: 64px;
+    height: 32px;
+    left: -32px;
+    top: -16px;
+    transform: rotateX(90deg) translateZ(48px);
+    background-position: -160px -128px;
+}
+
+.body .chest .bottom {
+    width: 64px;
+    height: 32px;
+    left: -32px;
+    top: -16px;
+    transform: rotateX(270deg) translateZ(48px);
+    background-position: -224px -128px;
+}
+
+/* Head */
+
+.body .head {
+    transform: translate3d(0px, -48px, 0px);
+    animation: 6s linear infinite alternate head;
+}
+
+@keyframes head {
+    0% {
+        transform: translate3d(0px, -48px, 0px) rotateX(45deg) rotateY(60deg);
+    }
+
+    50% {
+        transform: translate3d(0px, -48px, 0px) rotateX(0deg) rotateY(0deg);
+    }
+
+    100% {
+        transform: translate3d(0px, -48px, 0px) rotateX(45deg) rotateY(-50deg);
+    }
+}
+
+.body .head .block {
+    transform: translate3d(0px, -32px, 0px);
+}
+
+/* hover Venom*/
+.body:hover .head {
+    transform: translate3d(0px, -48px, 0px);
+    animation: 0.15s linear infinite alternate head;
+}
+
+@keyframes head {
+    0% {
+        transform: translate3d(0px, -48px, 0px) rotateX(20deg) rotateY(30deg);
+    }
+
+    50% {
+        transform: translate3d(0px, -48px, 0px) rotateX(0deg) rotateY(-20deg);
+    }
+
+    100% {
+        transform: translate3d(0px, -48px, 0px) rotateX(20deg) rotateY(-50deg);
+    }
+}
+
+/**/
+
+.body .head .front {
+    width: 64px;
+    height: 64px;
+    left: -32px;
+    top: -32px;
+    transform: translateZ(32px);
+    background-position: -64px -64px;
+}
+
+.body .head .back {
+    width: 64px;
+    height: 64px;
+    left: -32px;
+    top: -32px;
+    transform: rotateY(180deg) translateZ(32px);
+    background-position: -192px -64px;
+}
+
+.body .head .left {
+    width: 64px;
+    height: 64px;
+    left: -32px;
+    top: -32px;
+    transform: rotateY(90deg) translateZ(32px);
+    background-position: -128px -64px;
+}
+
+.body .head .right {
+    width: 64px;
+    height: 64px;
+    left: -32px;
+    top: -32px;
+    transform: rotateY(270deg) translateZ(32px);
+    background-position: 0px -64px;
+}
+
+.body .head .top {
+    width: 64px;
+    height: 64px;
+    left: -32px;
+    top: -32px;
+    transform: rotateX(90deg) translateZ(32px);
+    background-position: -64px 0px;
+}
+
+.body .head .bottom {
+    width: 64px;
+    height: 64px;
+    left: -32px;
+    top: -32px;
+    transform: rotateX(270deg) translateZ(32px);
+    background-position: -128px 0px;
+}
+
+/* Hat */
+
+.body .head .hat .front {
+    width: 64px;
+    height: 64px;
+    left: -32px;
+    top: -32px;
+    transform: translateZ(32px);
+    background-position: -320px -64px;
+}
+
+.body .head .hat .back {
+    width: 64px;
+    height: 64px;
+    left: -32px;
+    top: -32px;
+    transform: rotateY(180deg) translateZ(32px);
+    background-position: -448px -64px;
+}
+
+.body .head .hat .left {
+    width: 64px;
+    height: 64px;
+    left: -32px;
+    top: -32px;
+    transform: rotateY(90deg) translateZ(32px);
+    background-position: -384px -64px;
+}
+
+.body .head .hat .right {
+    width: 64px;
+    height: 64px;
+    left: -32px;
+    top: -32px;
+    transform: rotateY(270deg) translateZ(32px);
+    background-position: -256px -64px;
+}
+
+.body .head .hat .top {
+    width: 64px;
+    height: 64px;
+    left: -32px;
+    top: -32px;
+    transform: rotateX(90deg) translateZ(32px);
+    background-position: -320px 0px;
+}
+
+.body .head .hat .bottom {
+    width: 64px;
+    height: 64px;
+    left: -32px;
+    top: -32px;
+    transform: rotateX(270deg) translateZ(32px);
+    background-position: -384px 0px;
+}
+
+/* Right Arm */
+
+.body .right-arm {
+    transform: translate3d(-32px, -48px, 0px);
+    animation: 0.5s linear infinite alternate right-arm;
+}
+
+@keyframes right-arm {
+    0% {
+        transform: translate3d(-32px, -48px, 0px) rotateX(40deg) rotateZ(20deg);
+    }
+
+    50% {
+        transform: translate3d(-32px, -48px, 0px) rotateX(0deg) rotateZ(30deg);
+    }
+
+    100% {
+        transform: translate3d(-32px, -48px, 0px) rotateX(-40deg) rotateZ(20deg);
+    }
+}
+
+.body .right-arm .block {
+    transform: translate3d(-16px, 48px, 0px);
+}
+
+.body .right-arm .front {
+    width: 32px;
+    height: 96px;
+    left: -16px;
+    top: -48px;
+    transform: translateZ(16px);
+    background-position: -352px -160px;
+}
+
+.body .right-arm .back {
+    width: 32px;
+    height: 96px;
+    left: -16px;
+    top: -48px;
+    transform: rotateY(180deg) translateZ(16px);
+    background-position: -416px -160px;
+}
+
+.body .right-arm .left {
+    width: 32px;
+    height: 96px;
+    left: -16px;
+    top: -48px;
+    transform: rotateY(90deg) translateZ(16px);
+    background-position: -384px -160px;
+}
+
+.body .right-arm .right {
+    width: 32px;
+    height: 96px;
+    left: -16px;
+    top: -48px;
+    transform: rotateY(270deg) translateZ(16px);
+    background-position: -320px -160px;
+}
+
+.body .right-arm .top {
+    transform: rotateX(90deg) translateZ(48px);
+    width: 32px;
+    height: 32px;
+    left: -16px;
+    top: -16px;
+    background-position: -352px -128px;
+}
+
+.body .right-arm .bottom {
+    width: 32px;
+    height: 32px;
+    left: -16px;
+    top: -16px;
+    transform: rotateX(270deg) translateZ(48px);
+    background-position: -384px -128px;
+}
+
+/* Left Arm */
+
+.body .left-arm {
+    transform: translate3d(32px, -48px, 0px);
+    animation: 0.5s linear infinite alternate left-arm;
+}
+
+@keyframes left-arm {
+    0% {
+        transform: translate3d(32px, -48px, 0px) rotateX(-40deg) rotateZ(-20deg);
+    }
+
+    50% {
+        transform: translate3d(32px, -48px, 0px) rotateX(0deg) rotateZ(-30deg);
+    }
+
+    100% {
+        transform: translate3d(32px, -48px, 0px) rotateX(40deg) rotateZ(-20deg);
+    }
+}
+
+.body .left-arm .block {
+    transform: translate3d(16px, 48px, 0px);
+}
+
+.body .left-arm .front {
+    width: 32px;
+    height: 96px;
+    left: -16px;
+    top: -48px;
+    transform: translateZ(16px);
+    background-position: -352px -160px;
+}
+
+.body .left-arm .back {
+    width: 32px;
+    height: 96px;
+    left: -16px;
+    top: -48px;
+    transform: rotateY(180deg) translateZ(16px);
+    background-position: -416px -160px;
+}
+
+.body .left-arm .left {
+    width: 32px;
+    height: 96px;
+    left: -16px;
+    top: -48px;
+    transform: rotateY(90deg) translateZ(16px);
+    background-position: -320px -160px;
+}
+
+.body .left-arm .right {
+    width: 32px;
+    height: 96px;
+    left: -16px;
+    top: -48px;
+    transform: rotateY(270deg) translateZ(16px);
+    background-position: -384px -160px;
+    ;
+}
+
+.body .left-arm .top {
+    width: 32px;
+    height: 32px;
+    left: -16px;
+    top: -16px;
+    transform: rotateX(90deg) translateZ(48px);
+    background-position: -352px -128px;
+}
+
+.body .left-arm .bottom {
+    width: 32px;
+    height: 32px;
+    left: -16px;
+    top: -16px;
+    transform: rotateX(270deg) translateZ(48px);
+    background-position: -384px -128px;
+}
+
+/* Right leg */
+
+.body .right-leg {
+    transform: translate3d(-16px, 48px, 0px);
+    animation: 0.5s linear infinite alternate right-leg;
+}
+
+@keyframes right-leg {
+    0% {
+        transform: translate3d(-16px, 48px, 0px) rotateX(-40deg);
+    }
+
+    100% {
+        transform: translate3d(-16px, 48px, 0px) rotateX(40deg);
+    }
+}
+
+.body .right-leg .block {
+    transform: translate3d(0px, 48px, 0px);
+}
+
+.body .right-leg .front {
+    width: 32px;
+    height: 96px;
+    left: -16px;
+    top: -48px;
+    transform: translateZ(16px);
+    background-position: -32px -160px;
+}
+
+.body .right-leg .back {
+    width: 32px;
+    height: 96px;
+    left: -16px;
+    top: -48px;
+    transform: rotateY(180deg) translateZ(16px);
+    background-position: -96px -160px;
+}
+
+.body .right-leg .left {
+    width: 32px;
+    height: 96px;
+    left: -16px;
+    top: -48px;
+    transform: rotateY(90deg) translateZ(16px);
+    background-position: -64px -160px;
+}
+
+.body .right-leg .right {
+    width: 32px;
+    height: 96px;
+    left: -16px;
+    top: -48px;
+    transform: rotateY(270deg) translateZ(16px);
+    background-position: 0px -160px;
+}
+
+.body .right-leg .top {
+    width: 32px;
+    height: 32px;
+    left: -16px;
+    top: -16px;
+    transform: rotateX(90deg) translateZ(48px);
+    background-position: -32px -128px;
+}
+
+.body .right-leg .bottom {
+    width: 32px;
+    height: 32px;
+    left: -16px;
+    top: -16px;
+    transform: rotateX(270deg) translateZ(48px);
+    background-position: -64px -128px;
+}
+
+/* Left Leg */
+
+.body .left-leg {
+    transform: translate3d(16px, 48px, 0px);
+    animation: 0.5s linear infinite alternate left-leg;
+}
+
+@keyframes left-leg {
+    0% {
+        transform: translate3d(16px, 48px, 0px) rotateX(40deg);
+    }
+
+    100% {
+        transform: translate3d(16px, 48px, 0px) rotateX(-40deg);
+    }
+}
+
+.body .left-leg .block {
+    transform: translate3d(0px, 48px, 0px);
+}
+
+.body .left-leg .front {
+    width: 32px;
+    height: 96px;
+    left: -16px;
+    top: -48px;
+    transform: translateZ(16px);
+    background-position: -32px -160px;
+}
+
+.body .left-leg .back {
+    width: 32px;
+    height: 96px;
+    left: -16px;
+    top: -48px;
+    transform: rotateY(180deg) translateZ(16px);
+    background-position: -96px -160px;
+}
+
+.body .left-leg .left {
+    width: 32px;
+    height: 96px;
+    left: -16px;
+    top: -48px;
+    transform: rotateY(90deg) translateZ(16px);
+    background-position: 0px -160px;
+}
+
+.body .left-leg .right {
+    width: 32px;
+    height: 96px;
+    left: -16px;
+    top: -48px;
+    transform: rotateY(270deg) translateZ(16px);
+    background-position: -64px -160px;
+}
+
+.body .left-leg .top {
+    width: 32px;
+    height: 32px;
+    left: -16px;
+    top: -16px;
+    transform: rotateX(90deg) translateZ(48px);
+    background-position: -32px -128px;
+}
+
+.body .left-leg .bottom {
+    width: 32px;
+    height: 32px;
+    left: -16px;
+    top: -16px;
+    transform: rotateX(270deg) translateZ(48px);
+    background-position: -64px -128px;
+}
+
+.shadow {
+    display: flex;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25) 5%, transparent 30%);
+    height: 75px;
+    width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    top: -34px;
+    position: relative;
+}
+
+/* FIN SKIN */
+
+/* Buttons */
+.buttons-mobs-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    margin: 7rem 4rem auto 4rem;
+    position: relative;
+}
+
+button {
+    border: none;
+    background: none;
+    height: 35px;
+}
+
+.mob {
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 2px solid;
+    outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 0px;
+    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+    font-family: Minecraft;
+    padding: 0.4rem 2rem;
+    font-size: 1.3vw;
+    color: white;
+}
+
+.mob:hover {
+    border: 2px solid;
+    border-color: #FFFF00;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    text-shadow: 1px 1px 2px #427388;
+    cursor: pointer;
+    color: #FFFF00;
+}
+
